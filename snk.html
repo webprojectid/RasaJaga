@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syarat & Ketentuan – RasaJaga</title>
+<title>S&K dan Kebijakan Privasi – RasaJaga</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -32,18 +32,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:
 .n-cta:hover{background:var(--dark);box-shadow:var(--shadow-md);transform:translateY(-2px)}
 
 /* Header S&K */
-.snk-header{text-align:center;padding:9rem 3rem 3rem;}
-.snk-hl{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,54px);font-weight:700;color:var(--dark);margin-bottom:1rem;letter-spacing:-1px}
-.snk-sub{font-size:16px;color:var(--dark-m);max-width:600px;margin:0 auto;line-height:1.7}
+.snk-header{text-align:center;padding:10rem 3rem 3rem;}
+.snk-hl{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,50px);font-weight:700;color:var(--dark);margin-bottom:.75rem;letter-spacing:-1px}
+.snk-sub{font-size:15px;color:var(--dark-m);max-width:600px;margin:0 auto 1.5rem;line-height:1.7}
+.date-badge{display:inline-block;background:rgba(196,92,56,.1);color:var(--coral);font-size:12px;font-weight:600;padding:6px 16px;border-radius:100px;letter-spacing:.05em}
 
 /* Grid Content App-Feel */
-.snk{padding:2rem 3rem 8rem;max-width:1100px;margin:0 auto}
-.snk-inner{background:rgba(255, 255, 255, 0.6);border:1px solid rgba(196,92,56,.1);border-radius:var(--radius-lg);padding:4rem 3rem; box-shadow:var(--shadow-md)}
+.snk{padding:1rem 3rem 8rem;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:3rem}
+.snk-inner{background:rgba(255, 255, 255, 0.7);border:1px solid rgba(196,92,56,.1);border-radius:var(--radius-lg);padding:4rem 3rem; box-shadow:var(--shadow-md)}
+.section-hl{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--dark);margin-bottom:2.5rem;display:flex;align-items:center;gap:12px}
+.section-hl::before{content:'';width:24px;height:2px;background:var(--coral);border-radius:2px}
+
 .snk-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:2.5rem}
 .snk-item{display:flex;gap:1.25rem;align-items:flex-start}
-.snk-icon{color:var(--coral);flex-shrink:0;margin-top:2px}
+.snk-icon{color:var(--coral);flex-shrink:0;margin-top:2px;background:var(--coral-p);padding:8px;border-radius:10px}
 .snk-text h4{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:.5rem}
-.snk-text p{font-size:14.5px;color:var(--dark-m);line-height:1.7}
+.snk-text p{font-size:14px;color:var(--dark-m);line-height:1.75}
 
 /* UNIVERSAL FOOTER */
 footer{background:var(--dark);padding:5rem 3rem}
@@ -61,7 +65,7 @@ footer{background:var(--dark);padding:5rem 3rem}
 @media(max-width:768px){
   nav{padding:1rem 1.5rem} .n-links{display:none} .n-cta{padding:9px 18px;font-size:12px}
   .snk-header{padding:7rem 1.5rem 2rem}
-  .snk{padding:1rem 1.5rem 5rem}
+  .snk{padding:1rem 1.5rem 5rem;gap:2rem}
   .snk-inner{padding:2.5rem 1.5rem;border-radius:20px}
   .snk-grid{grid-template-columns:1fr;gap:2rem}
   footer{padding:4rem 1.5rem} .ft-inner{flex-direction:column;gap:2rem;text-align:center;align-items:center}
@@ -84,57 +88,124 @@ footer{background:var(--dark);padding:5rem 3rem}
 </nav>
 
 <header class="snk-header">
-  <h1 class="snk-hl">Syarat &amp; Ketentuan</h1>
-  <p class="snk-sub">Mohon baca secara seksama aturan dan ruang lingkup pelayanan kami untuk memastikan kenyamanan dan keselamatan bersama.</p>
+  <h1 class="snk-hl">S&K dan Kebijakan Privasi</h1>
+  <p class="snk-sub">Mohon baca secara seksama aturan, batasan tanggung jawab, serta perlindungan privasi pada layanan kami.</p>
+  <span class="date-badge">Terakhir diperbarui: 14 Juni 2026</span>
 </header>
 
 <section class="snk">
+  
+  <!-- BAGIAN 1: S&K -->
   <div class="snk-inner">
+    <h2 class="section-hl">Syarat &amp; Ketentuan Layanan</h2>
     <div class="snk-grid">
+      
       <div class="snk-item">
-        <svg class="snk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         <div class="snk-text">
-          <h4>Transparansi Kondisi Pasien</h4>
-          <p>Keluarga wajib menjelaskan kondisi medis pasien secara detail dan jujur sebelum pemesanan. Jika pasien berada dalam kondisi sangat kritis atau tidak stabil, pengawasan tetap menjadi tanggung jawab penuh tenaga medis Rumah Sakit.</p>
+          <h4>1. Tentang RasaJaga</h4>
+          <p>RasaJaga adalah penyedia jasa pendampingan pasien (<em>caregiver</em> non-medis) di rumah sakit untuk wilayah Tangerang dan sekitarnya. Kami bertugas memberikan perawatan dasar dan pendampingan, bukan tindakan medis invasif.</p>
         </div>
       </div>
+      
       <div class="snk-item">
-        <svg class="snk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
         <div class="snk-text">
-          <h4>Batasan Penyakit Menular</h4>
-          <p>Demi keselamatan pendamping kami, saat ini kami <strong>belum dapat melayani</strong> perawatan untuk pasien dengan penyakit menular berisiko tinggi (TBC paru aktif, COVID-19, cacar air, dll). Mohon konfirmasikan diagnosis dokter di awal.</p>
+          <h4>2. Penggunaan & Tanggung Jawab</h4>
+          <p>Dengan menggunakan layanan kami, pengguna setuju untuk tidak melakukan aktivitas ilegal, memberikan informasi palsu terkait kondisi pasien, atau menyalahgunakan tenaga pendamping untuk hal di luar ruang lingkup keperawatan pasien.</p>
         </div>
       </div>
+      
       <div class="snk-item">
-        <svg class="snk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         <div class="snk-text">
-          <h4>Hak Penolakan Layanan</h4>
-          <p>RasaJaga berhak membatalkan layanan secara sepihak dan mengembalikan dana apabila ditemukan bahwa kondisi aktual pasien disembunyikan/berbeda dari kesepakatan, atau membahayakan keselamatan staf kami di lokasi.</p>
+          <h4>3. Kondisi Medis & Penyakit Menular</h4>
+          <p>Keluarga wajib transparan terkait diagnosa. RasaJaga berhak menolak layanan untuk pasien kritis yang butuh pantauan medis intensif, atau pasien dengan penyakit menular berisiko tinggi (TBC paru aktif, COVID-19, cacar air, dll).</p>
         </div>
       </div>
+
       <div class="snk-item">
-        <svg class="snk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         <div class="snk-text">
-          <h4>Keamanan Barang Berharga</h4>
-          <p>RasaJaga dan pendamping tidak bertanggung jawab atas kehilangan atau kerusakan barang berharga (gawai, uang, perhiasan) milik pasien. Keluarga wajib mengamankan barang-barang tersebut sebelum meninggalkan Rumah Sakit.</p>
+          <h4>4. Batasan Tanggung Jawab</h4>
+          <p>Layanan disediakan "sebagaimana adanya". RasaJaga tidak bertanggung jawab atas kerugian langsung/tidak langsung, komplikasi medis, maupun kehilangan barang berharga milik pasien atau keluarga di lingkungan rumah sakit.</p>
         </div>
       </div>
+
       <div class="snk-item">
-        <svg class="snk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <div class="snk-text">
-          <h4>Prosedur Keadaan Darurat</h4>
-          <p>Jika pasien mengalami perburukan kondisi mendadak (darurat), tugas utama pendamping adalah segera memanggil dokter atau perawat jaga. Kami tidak diperkenankan memberikan tindakan medis langsung untuk menghindari malapraktik.</p>
+          <h4>5. Konten & Data Pengguna</h4>
+          <p>Semua informasi yang diberikan pengguna saat pemesanan (via formulir atau WhatsApp) adalah tanggung jawab pengguna. Kami berhak membatalkan sepihak jika instruksi di lapangan berbeda dengan informasi awal.</p>
         </div>
       </div>
+
       <div class="snk-item">
-        <svg class="snk-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         <div class="snk-text">
-          <h4>Batas Ruang Lingkup Pekerjaan</h4>
-          <p>Fokus kerja pendamping secara eksklusif hanya untuk merawat pasien. Pendamping berhak menolak permintaan di luar lingkup medis/perawatan dasar (seperti mencuci pakaian keluarga pasien atau disuruh berbelanja jauh dari area RS).</p>
+          <h4>6. Perubahan Ketentuan</h4>
+          <p>Kami dapat mengubah, menghentikan, atau memperbarui layanan serta ketentuan ini kapan saja. Versi terbaru akan selalu ditampilkan di halaman ini.</p>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- BAGIAN 2: PRIVACY POLICY -->
+  <div class="snk-inner">
+    <h2 class="section-hl">Kebijakan Privasi (Privacy Policy)</h2>
+    <div class="snk-grid">
+      
+      <div class="snk-item">
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="snk-text">
+          <h4>1. Data yang Dikumpulkan</h4>
+          <p>Saat ini RasaJaga hanya mengumpulkan data yang Anda berikan secara sadar melalui form pemesanan dan WhatsApp (berupa nama kontak, informasi rumah sakit, dan kondisi medis dasar pasien).</p>
+        </div>
+      </div>
+
+      <div class="snk-item">
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div class="snk-text">
+          <h4>2. Penggunaan Data</h4>
+          <p>Setiap data yang diproses hanya difokuskan untuk 1) Menjalankan fitur layanan (penjadwalan shift pendamping), 2) Komunikasi darurat, dan 3) Meningkatkan keamanan dan kualitas pengalaman pengguna kami.</p>
+        </div>
+      </div>
+
+      <div class="snk-item">
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="snk-text">
+          <h4>3. Pembagian Data</h4>
+          <p>Kami 100% menghargai privasi Anda. Kami <strong>tidak menjual</strong> atau membagikan data kontak maupun kondisi medis pasien kepada pihak ketiga di luar operasional internal tim pendamping RasaJaga.</p>
+        </div>
+      </div>
+
+      <div class="snk-item">
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <div class="snk-text">
+          <h4>4. Cookies & Tracking</h4>
+          <p>Halaman website RasaJaga bersifat statis informatif. Saat ini kami tidak menggunakan <em>cookies</em>, pixel, atau sistem pelacakan otomatis yang diam-diam mengambil data perangkat Anda.</p>
+        </div>
+      </div>
+
+      <div class="snk-item">
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="snk-text">
+          <h4>5. Keamanan Digital</h4>
+          <p>Kami berusaha semaksimal mungkin menjaga kerahasiaan riwayat obrolan di WhatsApp dan data pemesanan. Namun, pengguna menyadari bahwa tidak ada transmisi data di internet yang 100% aman.</p>
+        </div>
+      </div>
+
+      <div class="snk-item">
+        <svg class="snk-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div class="snk-text">
+          <h4>6. Perubahan Kebijakan Privasi</h4>
+          <p>Kebijakan pengumpulan data dan privasi ini dapat diperbarui sewaktu-waktu sesuai dengan kebutuhan operasional tanpa pemberitahuan sebelumnya.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- UNIVERSAL FOOTER -->
@@ -161,5 +232,6 @@ footer{background:var(--dark);padding:5rem 3rem}
     </div>
   </div>
 </footer>
+
 </body>
 </html>
