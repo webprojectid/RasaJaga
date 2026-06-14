@@ -4,83 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pesan Layanan – RasaJaga</title>
-
-<!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
+/* UI CONSISTENCY SYSTEM (TOKENS) */
 :root{
-  --cream:#FDF5EE;--cream-d:#F0E4D0;--coral:#C45C38;--coral-l:#D96B4A;
-  --coral-p:#FAECE7;--amber:#E89050;--amber-p:#FBF2E8;
-  --dark:#2E1A0E;--dark-m:#7A5A47;--white:#fff;
+  --cream:#FDF5EE; --cream-d:#F0E4D0; --coral:#C45C38; --coral-l:#D96B4A; --coral-p:#FAECE7;
+  --amber:#E89050; --amber-p:#FBF2E8; --dark:#2E1A0E; --dark-m:#7A5A47; --white:#fff;
+  --radius-sm: 12px; --radius-md: 20px; --radius-lg: 28px;
+  --shadow-sm: 0 4px 12px rgba(196,92,56,0.04);
+  --shadow-md: 0 8px 24px rgba(196,92,56,0.08);
+  --shadow-hover: 0 16px 40px rgba(196,92,56,0.12);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 
-/* Nav Minimalist */
-nav{padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(253,245,238,.94);border-bottom:.5px solid rgba(196,92,56,.12);position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px)}
+/* GLOBAL NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s ease; background:rgba(253,245,238,.94);backdrop-filter:blur(14px);border-bottom:.5px solid rgba(196,92,56,.12);box-shadow:var(--shadow-sm)}
 .n-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark);text-decoration:none;letter-spacing:-.5px}
 .n-logo em{color:var(--coral);font-style:italic}
-.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--dark-m);text-decoration:none;transition:color .2s}
-.back-btn:hover{color:var(--coral)}
+.n-links{display:flex;gap:1rem;list-style:none}
+.n-links a{font-size:13px;font-weight:500;color:var(--dark-m);text-decoration:none;padding:8px 18px;border-radius:100px;transition:all .25s}
+.n-links a:hover{background:rgba(196,92,56,.08);color:var(--coral)}
+.n-cta{background:var(--coral);color:#fff;border:none;padding:11px 24px;border-radius:100px;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:all .25s;text-decoration:none;box-shadow:var(--shadow-sm)}
+.n-cta:hover{background:var(--dark);box-shadow:var(--shadow-md);transform:translateY(-2px)}
 
-/* Form Container */
-.form-section {padding: 8rem 3rem 5rem;}
-.form-container {max-width: 800px; margin: 0 auto; background: #fff; padding: 3rem 4rem; border-radius: 24px; box-shadow: 0 10px 40px rgba(196,92,56,.05); border: 1px solid rgba(196,92,56,.1);}
+/* Form Area */
+.form-section {padding: 9rem 3rem 5rem;}
+.form-container {max-width: 800px; margin: 0 auto; background: #fff; padding: 3rem 4rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid rgba(196,92,56,.1);}
 .form-header {text-align: center; margin-bottom: 3rem;}
 .form-hl {font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 42px); font-weight: 700; color: var(--dark); margin-bottom: .5rem;}
-.form-sub {font-size: 14.5px; color: var(--dark-m); line-height: 1.6;}
+.form-sub {font-size: 15px; color: var(--dark-m); line-height: 1.6;}
 
-/* Form Elements */
+/* Form App-Feel */
 .form-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem;}
-.form-grid.full {grid-template-columns: 1fr;}
 .input-group {display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.25rem;}
 .input-group label {font-size: 13px; font-weight: 600; color: var(--dark);}
-.input-group input, .input-group select {width: 100%; padding: 14px 16px; border: 1px solid rgba(196,92,56,.2); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 14px; background: var(--cream); color: var(--dark); outline: none; transition: border-color 0.2s;}
-.input-group input:focus, .input-group select:focus {border-color: var(--coral);}
+.input-group input, .input-group select {width: 100%; padding: 14px 16px; border: 1px solid rgba(196,92,56,.2); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; background: var(--cream); color: var(--dark); outline: none; transition: all 0.3s ease;}
+.input-group input:focus, .input-group select:focus {border-color: var(--coral); box-shadow: 0 0 0 4px rgba(196,92,56,.15); background:#fff}
 .section-divider {grid-column: 1 / -1; height: 1px; background: rgba(196,92,56,.1); margin: 1rem 0 2rem;}
 .section-title {grid-column: 1 / -1; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--coral); margin-bottom: -0.5rem;}
 
-.btn-submit {width: 100%; background: var(--coral); color: #fff; padding: 18px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; border: none; cursor: pointer; transition: all .25s; margin-top: 1rem; display:flex; justify-content:center; align-items:center; gap:10px}
-.btn-submit:hover {background: var(--dark); transform:translateY(-3px)}
+.btn-submit {width: 100%; background: var(--coral); color: #fff; padding: 18px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; border: none; cursor: pointer; transition: all .25s; margin-top: 1rem; display:flex; justify-content:center; align-items:center; gap:10px; box-shadow:var(--shadow-md)}
+.btn-submit:hover {background: var(--dark); transform:translateY(-3px); box-shadow:var(--shadow-hover)}
 
-/* Footer & Socials */
-footer{background:var(--dark);padding:4.5rem 3rem}
+/* UNIVERSAL FOOTER */
+footer{background:var(--dark);padding:5rem 3rem}
 .ft-inner{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start}
-.ft-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff}
+.ft-logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fff}
 .ft-logo em{color:var(--amber);font-style:italic}
-.ft-copy{font-size:12px;color:rgba(255,255,255,.3)}
-.ft-info{font-size:12px;color:rgba(255,255,255,.3);text-align:right;line-height:1.75}
+.ft-copy{font-size:13px;color:rgba(255,255,255,.4)}
+.ft-info{font-size:13px;color:rgba(255,255,255,.4);text-align:right;line-height:1.8}
 .ft-link{color:var(--amber);text-decoration:none;transition:color .25s}
 .ft-link:hover{color:#fff}
-.ft-socials{display:flex;align-items:center;justify-content:flex-end;gap:1.25rem;margin-top:.5rem}
-.ft-socials a{color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color .25s}
-.ft-socials a:hover{color:#fff}
+.ft-socials{display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;margin-top:1rem}
+.ft-socials a{color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .25s;font-weight:500}
+.ft-socials a:hover{color:#fff;transform:translateY(-2px)}
 
-/* ── RESPONSIVE MOBILE ── */
 @media(max-width:768px){
-  nav{padding:1rem 1.5rem}
-  .form-section {padding: 6rem 1.5rem 3rem;}
-  .form-container {padding: 2rem 1.5rem;}
-  .form-grid {grid-template-columns: 1fr;}
-  footer{padding:3rem 1.5rem}
-  .ft-inner{flex-direction:column;gap:2rem;text-align:center;align-items:center}
-  .ft-info{text-align:center}
-  .ft-socials{justify-content:center}
+  nav{padding:1rem 1.5rem} .n-links{display:none}
+  .form-section {padding: 7rem 1.5rem 3rem;} .form-container {padding: 2rem 1.5rem;} .form-grid {grid-template-columns: 1fr;}
+  footer{padding:4rem 1.5rem} .ft-inner{flex-direction:column;gap:2rem;text-align:center;align-items:center}
+  .ft-info{text-align:center} .ft-socials{justify-content:center}
 }
 </style>
 </head>
 <body>
 
-<nav>
+<!-- GLOBAL NAVBAR -->
+<nav id="nav">
   <a href="index.html" class="n-logo">Rasa<em>Jaga</em></a>
-  <a href="index.html" class="back-btn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    Kembali
-  </a>
+  <ul class="n-links">
+    <li><a href="index.html#layanan">Layanan</a></li>
+    <li><a href="index.html#cara-kerja">Cara Kerja</a></li>
+    <li><a href="index.html#harga">Harga</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+  <!-- State aktif di menu pemesanan -->
+  <a href="pesan.html" class="n-cta" style="background:var(--dark);">Pesan Sekarang</a>
 </nav>
 
 <section class="form-section">
@@ -92,102 +95,44 @@ footer{background:var(--dark);padding:4.5rem 3rem}
 
     <form id="orderForm" onsubmit="kirimWhatsApp(event)">
       <div class="form-grid">
-        
         <h3 class="section-title">Data Pemesan</h3>
-        
+        <div class="input-group"><label>Nama Anda (Pemesan)</label><input type="text" id="pemesan" placeholder="Contoh: Budi Santoso" required></div>
         <div class="input-group">
-          <label for="pemesan">Nama Anda (Pemesan)</label>
-          <input type="text" id="pemesan" placeholder="Contoh: Budi Santoso" required>
-        </div>
-        <div class="input-group">
-          <label for="hubungan">Hubungan dengan Pasien</label>
+          <label>Hubungan dengan Pasien</label>
           <select id="hubungan" required>
-            <option value="">Pilih hubungan...</option>
-            <option value="Anak">Anak</option>
-            <option value="Pasangan (Suami/Istri)">Pasangan (Suami/Istri)</option>
-            <option value="Orang Tua">Orang Tua</option>
-            <option value="Saudara / Kerabat">Saudara / Kerabat</option>
-            <option value="Lainnya">Lainnya</option>
+            <option value="">Pilih hubungan...</option><option value="Anak">Anak</option><option value="Pasangan (Suami/Istri)">Pasangan (Suami/Istri)</option><option value="Orang Tua">Orang Tua</option><option value="Saudara / Kerabat">Saudara / Kerabat</option><option value="Lainnya">Lainnya</option>
           </select>
         </div>
 
         <div class="section-divider"></div>
         <h3 class="section-title">Data Pasien & Lokasi</h3>
-
-        <div class="input-group">
-          <label for="pasien">Nama Pasien</label>
-          <input type="text" id="pasien" placeholder="Contoh: Ibu Siti" required>
-        </div>
-        <div class="input-group">
-          <label for="jk_pasien">Jenis Kelamin Pasien</label>
-          <select id="jk_pasien" required>
-            <option value="">Pilih jenis kelamin...</option>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
-          </select>
-        </div>
-
-        <div class="input-group full" style="grid-column: 1 / -1;">
-          <label for="rs">Rumah Sakit & Ruang Rawat</label>
-          <input type="text" id="rs" placeholder="Contoh: RS EMC Alam Sutera, Ruang Melati No. 12" required>
-        </div>
-
-        <div class="input-group full" style="grid-column: 1 / -1;">
-          <label for="penyakit">Penyakit / Diagnosa Medis</label>
-          <input type="text" id="penyakit" placeholder="Contoh: Pasca operasi usus buntu / Stroke ringan" required>
-        </div>
-
-        <div class="input-group full" style="grid-column: 1 / -1;">
-          <label for="mobilitas">Tingkat Mobilitas (Kondisi Fisik)</label>
+        <div class="input-group"><label>Nama Pasien</label><input type="text" id="pasien" placeholder="Contoh: Ibu Siti" required></div>
+        <div class="input-group"><label>Jenis Kelamin Pasien</label><select id="jk_pasien" required><option value="">Pilih jenis kelamin...</option><option value="Laki-laki">Laki-laki</option><option value="Perempuan">Perempuan</option></select></div>
+        <div class="input-group" style="grid-column: 1 / -1;"><label>Rumah Sakit & Ruang Rawat</label><input type="text" id="rs" placeholder="Contoh: RS EMC Alam Sutera, Ruang Melati No. 12" required></div>
+        <div class="input-group" style="grid-column: 1 / -1;"><label>Penyakit / Diagnosa Medis</label><input type="text" id="penyakit" placeholder="Contoh: Pasca operasi usus buntu / Stroke ringan" required></div>
+        <div class="input-group" style="grid-column: 1 / -1;">
+          <label>Tingkat Mobilitas (Kondisi Fisik)</label>
           <select id="mobilitas" required>
-            <option value="">Pilih kondisi mobilitas pasien...</option>
-            <option value="Bisa jalan mandiri ke toilet">Bisa jalan mandiri ke toilet</option>
-            <option value="Perlu dipapah / dibantu penuh">Perlu dipapah / dibantu penuh</option>
-            <option value="Bed rest total (pakai kateter / popok)">Bed rest total (pakai kateter / popok)</option>
+            <option value="">Pilih kondisi mobilitas pasien...</option><option value="Bisa jalan mandiri ke toilet">Bisa jalan mandiri ke toilet</option><option value="Perlu dipapah / dibantu penuh">Perlu dipapah / dibantu penuh</option><option value="Bed rest total (pakai kateter / popok)">Bed rest total (pakai kateter / popok)</option>
           </select>
         </div>
 
         <div class="section-divider"></div>
         <h3 class="section-title">Detail Layanan</h3>
-
         <div class="input-group">
-          <label for="paket">Pilihan Paket Layanan</label>
-          <select id="paket" required>
-            <option value="">Pilih paket...</option>
-            <option value="Paket 1 (Jaga Dasar)">Paket 1 (Jaga Dasar)</option>
-            <option value="Paket 2 (Jaga Standar)">Paket 2 (Jaga Standar)</option>
-            <option value="Paket 3 (Jaga Penuh)">Paket 3 (Jaga Penuh)</option>
-          </select>
+          <label>Pilihan Paket Layanan</label>
+          <select id="paket" required><option value="">Pilih paket...</option><option value="Paket 1 (Jaga Dasar)">Paket 1 (Jaga Dasar)</option><option value="Paket 2 (Jaga Standar)">Paket 2 (Jaga Standar)</option><option value="Paket 3 (Jaga Penuh)">Paket 3 (Jaga Penuh)</option></select>
         </div>
         <div class="input-group">
-          <label for="shift">Durasi Shift</label>
-          <select id="shift" required>
-            <option value="">Pilih durasi shift...</option>
-            <option value="3 Jam (Shift Singkat)">3 Jam (Shift Singkat)</option>
-            <option value="6 Jam (Shift Setengah)">6 Jam (Shift Setengah)</option>
-            <option value="12 Jam (Shift Pagi/Malam)">12 Jam (Shift Pagi/Malam)</option>
-            <option value="18 Jam (Shift Panjang)">18 Jam (Shift Panjang)</option>
-          </select>
+          <label>Durasi Shift</label>
+          <select id="shift" required><option value="">Pilih durasi shift...</option><option value="3 Jam (Shift Singkat)">3 Jam (Shift Singkat)</option><option value="6 Jam (Shift Setengah)">6 Jam (Shift Setengah)</option><option value="12 Jam (Shift Pagi/Malam)">12 Jam (Shift Pagi/Malam)</option><option value="18 Jam (Shift Panjang)">18 Jam (Shift Panjang)</option></select>
         </div>
-
-        <div class="input-group">
-          <label for="tanggal">Tanggal Mulai Jaga</label>
-          <input type="date" id="tanggal" required>
+        <div class="input-group"><label>Tanggal Mulai Jaga</label><input type="date" id="tanggal" required></div>
+        <div class="input-group"><label>Jam Mulai Jaga (WIB)</label><input type="time" id="waktu" required></div>
+        <div class="input-group" style="grid-column: 1 / -1;">
+          <label>Preferensi Gender Pendamping</label>
+          <select id="preferensi" required><option value="Bebas (Laki-laki / Perempuan)">Bebas (Laki-laki / Perempuan)</option><option value="Harus Laki-laki">Harus Laki-laki</option><option value="Harus Perempuan">Harus Perempuan</option></select>
         </div>
-        <div class="input-group">
-          <label for="waktu">Jam Mulai Jaga (WIB)</label>
-          <input type="time" id="waktu" required>
-        </div>
-
-        <div class="input-group full" style="grid-column: 1 / -1;">
-          <label for="preferensi">Preferensi Gender Pendamping</label>
-          <select id="preferensi" required>
-            <option value="Bebas (Laki-laki / Perempuan)">Bebas (Laki-laki / Perempuan)</option>
-            <option value="Harus Laki-laki">Harus Laki-laki</option>
-            <option value="Harus Perempuan">Harus Perempuan</option>
-          </select>
-        </div>
-
       </div>
 
       <button type="submit" class="btn-submit">
@@ -198,6 +143,7 @@ footer{background:var(--dark);padding:4.5rem 3rem}
   </div>
 </section>
 
+<!-- UNIVERSAL FOOTER -->
 <footer>
   <div class="ft-inner">
     <div>
@@ -211,7 +157,7 @@ footer{background:var(--dark);padding:4.5rem 3rem}
       <div class="ft-socials">
         <a href="https://api.whatsapp.com/send?phone=6287784354857" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-          WhatsApp
+          WhatsApp CS
         </a>
         <a href="https://www.instagram.com/rasajaga.id" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -225,8 +171,6 @@ footer{background:var(--dark);padding:4.5rem 3rem}
 <script>
 function kirimWhatsApp(e) {
   e.preventDefault();
-  
-  // Mengambil nilai dari form
   const pemesan = document.getElementById('pemesan').value;
   const hubungan = document.getElementById('hubungan').value;
   const pasien = document.getElementById('pasien').value;
@@ -240,31 +184,9 @@ function kirimWhatsApp(e) {
   const waktu = document.getElementById('waktu').value;
   const preferensi = document.getElementById('preferensi').value;
 
-  // Format Teks WhatsApp
-  const textWA = `Halo RasaJaga, saya ingin memesan layanan pendampingan pasien dengan detail berikut:
-
-*DATA PEMESAN*
-- Nama Pemesan: ${pemesan}
-- Hubungan dgn Pasien: ${hubungan}
-
-*DATA PASIEN & LOKASI*
-- Nama Pasien: ${pasien} (${jk_pasien})
-- RS & Ruang Rawat: ${rs}
-- Penyakit/Diagnosa: ${penyakit}
-- Tingkat Mobilitas: ${mobilitas}
-
-*DETAIL LAYANAN*
-- Pilihan Paket: ${paket}
-- Durasi Shift: ${shift}
-- Tanggal Mulai: ${tanggal}
-- Jam Mulai (WIB): ${waktu}
-- Preferensi Pendamping: ${preferensi}
-
-Mohon informasi mengenai ketersediaan pendamping dan total biayanya. Terima kasih!`;
-
-  // Redirect ke API WhatsApp
-  const waURL = 'https://api.whatsapp.com/send?phone=6287784354857&text=' + encodeURIComponent(textWA);
-  window.open(waURL, '_blank');
+  const textWA = `Halo RasaJaga, saya ingin memesan layanan pendampingan pasien dengan detail berikut:\n\n*DATA PEMESAN*\n- Nama: ${pemesan}\n- Hubungan: ${hubungan}\n\n*DATA PASIEN & LOKASI*\n- Pasien: ${pasien} (${jk_pasien})\n- RS: ${rs}\n- Penyakit: ${penyakit}\n- Mobilitas: ${mobilitas}\n\n*DETAIL LAYANAN*\n- Paket: ${paket}\n- Shift: ${shift}\n- Tanggal: ${tanggal}\n- Jam: ${waktu} WIB\n- Gender Pendamping: ${preferensi}\n\nMohon info ketersediaan pendamping dan total biayanya. Terima kasih!`;
+  
+  window.open('https://api.whatsapp.com/send?phone=6287784354857&text=' + encodeURIComponent(textWA), '_blank');
 }
 </script>
 </body>
