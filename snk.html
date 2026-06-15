@@ -6,6 +6,7 @@
 <title>RasaJaga – Pendamping Pasien di Rumah Sakit Tangerang | Hadir Saat Keluarga Tak Bisa</title>
 <meta name="description" content="Layanan pendamping pasien rawat inap di Tangerang. Shift 3-18 jam, laporan real-time via WA. Transparan, terlatih, dan terjangkau.">
 
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favico.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +67,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:
 .snk-header{text-align:center;padding:11rem 3rem 3rem;}
 .snk-hl{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,50px);font-weight:700;color:var(--dark);margin-bottom:.75rem;letter-spacing:-1px}
 .snk-sub{font-size:15px;color:var(--dark-m);max-width:600px;margin:0 auto 1.5rem;line-height:1.7}
-.date-badge{display:inline-block;background:rgba(196,92,56,.1);color:var(--coral);font-size:12px;font-weight:600;padding:6px 16px;border-radius:100px;letter-spacing:.05em}
+.date-badge{display:inline-block;background:rgba(196,92,56,.1);color:var(--coral);font-size:12px;font-weight:600;padding:6px 16px;border-radius:100px;letter-spacing Club:.05em}
 
 /* Grid Content App-Feel */
 .snk{padding:1rem 3rem 8rem;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:4rem}
@@ -147,6 +148,7 @@ footer{background:var(--dark);padding:5rem 3rem}
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
+<!-- GLOBAL NAVBAR -->
 <nav id="nav">
   <div class="n-menu-wrapper">
     <a href="index.html" class="n-logo">Rasa<em>Jaga</em></a>
@@ -156,10 +158,11 @@ footer{background:var(--dark);padding:5rem 3rem}
       <li><a href="index.html#cara-kerja">Cara Kerja</a></li>
       <li><a href="index.html#harga">Harga</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="#footer">Kontak</a></li>
+      <li><a href="index.html#footer">Kontak</a></li>
     </ul>
   </div>
   <div class="n-actions">
+    <!-- Dark Mode Toggle -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
       <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -177,10 +180,19 @@ footer{background:var(--dark);padding:5rem 3rem}
 
 <section class="snk">
   
+  <!-- BAGIAN 1: S&K -->
   <div class="snk-inner">
     <h2 class="section-hl">Syarat & Ketentuan Layanan</h2>
     <div class="snk-grid">
       
+      <div class="snk-item">
+        <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="snk-text">
+          <h4>Lingkup Eksklusif Jaga Penuh</h4>
+          <p>Paket Jaga Penuh (VVIP) mencakup seluruh fitur standar ditambah layanan premium berupa: Jembatan komunikasi ke dokter, pendamping senior (khusus lansia/pasien bingung), <em>update video call</em> berkala, serta bantuan logistik eksternal.</p>
+        </div>
+      </div>
+
       <div class="snk-item">
         <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         <div class="snk-text">
@@ -209,7 +221,7 @@ footer{background:var(--dark);padding:5rem 3rem}
         <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <div class="snk-text">
           <h4>Tanggung Jawab Darurat (Sakit/Telat)</h4>
-          <p>Jika pendamping yang dijadwalkan tiba-tiba sakit atau berhalangan hadir, RasaJaga bertanggung jawab mencari pengganti dalam waktu <strong>< 2 Jam</strong>. Jika gagal, biaya shift tersebut akan dikembalikan penuh.</p>
+          <p>Jika pendamping yang dijadwalkan tiba-tiba sakit atau berhalangan hadir, RasaJaga bertanggung jawab mencari pengganti dalam waktu <strong>&lt; 2 Jam</strong>. Jika gagal, biaya shift tersebut akan dikembalikan penuh.</p>
         </div>
       </div>
       
@@ -237,33 +249,35 @@ footer{background:var(--dark);padding:5rem 3rem}
         </div>
       </div>
 
+      <!-- KLAUSUL BARU: PELEPASAN KLAIM KLINIS & OBSERVASI (KUNCI ANTI-MALPRAKTIK) -->
       <div class="snk-item">
-        <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         <div class="snk-text">
-          <h4>Perubahan Ketentuan</h4>
-          <p>Kami dapat mengubah, menghentikan, atau memperbarui layanan serta ketentuan ini kapan saja. Versi terbaru akan selalu ditampilkan di halaman ini.</p>
+          <h4>Pelepasan Klaim Klinis &amp; Observasi RS</h4>
+          <p>Pendamping dilarang keras melakukan atau memodifikasi tindakan klinis mandiri. Segala bentuk perubahan stabilitas fisik pasien wajib merujuk secara hukum pada rekam medis internal pihak Rumah Sakit, bukan catatan personal pendamping.</p>
         </div>
       </div>
 
       <div class="snk-item">
         <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
         <div class="snk-text">
-          <h4>Tagihan & Biaya Medis</h4>
+          <h4>Tagihan &amp; Biaya Medis</h4>
           <p>RasaJaga murni penyedia jasa pendampingan pihak ketiga. Kami dibebaskan dari segala tuntutan hukum atau finansial terkait tunggakan tagihan rumah sakit, obat, maupun perawatan medis pasien.</p>
         </div>
       </div>
 
-      <div class="snk-item">
+      <div class="snk-item" style="grid-column: 1 / -1; margin-top: 1rem;">
         <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         <div class="snk-text">
-          <h4>Keterlambatan & Penelantaran</h4>
-          <p>Jika keluarga tidak hadir di akhir shift, berlaku biaya <em>overtime</em>. Jika keluarga tidak bisa dihubungi lebih dari 3 jam pasca-shift, pendamping akan menyerahkan pengawasan pasien kembali ke perawat RS dan berhak meninggalkan lokasi.</p>
+          <h4>Keterlambatan &amp; Penelantaran Pasien oleh Keluarga</h4>
+          <p>Jika keluarga tidak hadir di akhir shift, berlaku biaya <em>overtime</em>. Jika keluarga tidak bisa dihubungi lebih dari 3 jam pasca-shift, pendamping akan menyerahkan pengawasan pasien kembali ke perawat RS dan berhak meninggalkan lokasi demi hukum.</p>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- BAGIAN 2: PRIVACY POLICY -->
   <div class="snk-inner">
     <h2 class="section-hl">Kebijakan Privasi (Privacy Policy)</h2>
     <div class="snk-grid">
@@ -295,7 +309,7 @@ footer{background:var(--dark);padding:5rem 3rem}
       <div class="snk-item">
         <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
         <div class="snk-text">
-          <h4>Cookies & Tracking</h4>
+          <h4>Cookies &amp; Tracking</h4>
           <p>Halaman website RasaJaga bersifat statis informatif. Saat ini kami tidak menggunakan <em>cookies</em>, pixel, atau sistem pelacakan otomatis yang diam-diam mengambil data perangkat Anda.</p>
         </div>
       </div>
@@ -321,20 +335,10 @@ footer{background:var(--dark);padding:5rem 3rem}
 
 </section>
 
-<section class="cta" id="pesan">
-  <div class="cta-bg">RJ</div>
-  <div class="cta-flex rv">
-    <div class="cta-content">
-      <h2 class="cta-hl" style="font-size: clamp(36px,5vw,64px); letter-spacing: -2px;">Siap memastikan mereka<br><em style="font-style:italic">tidak sendirian?</em></h2>
-      <p class="cta-sub" style="margin-left: 0;">Satu klik saja, bantu kami memahami kebutuhan Anda lewat form singkat yang akan diteruskan ke WhatsApp.</p>
-      <a href="pesan.html" class="btn-wa">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-      Mulai Pendampingan
-    </a>
-    <p class="cta-note">Respon cepat · Senin - Minggu · Tangerang</p>
-  </div>
-</section>
+<!-- Perubahan Aturan Kecil Paling Bawah -->
+<p style="text-align:center; font-size:12px; color:var(--dark-m); margin-top:-5rem; padding-bottom:4rem;">* Ketentuan &amp; Aturan layanan di atas dapat berubah atau diperbarui sewaktu-waktu tanpa pemberitahuan sebelumnya.</p>
 
+<!-- UNIVERSAL FOOTER -->
 <footer id="footer">
   <div class="ft-inner">
     <div>
@@ -345,7 +349,7 @@ footer{background:var(--dark);padding:5rem 3rem}
       JL. Raya Lenteng Agung, HE Mahjur No.87, Jakarta Selatan<br>
       CS: 08.00-21.00 WIB (Senin-Minggu)<br><br>
       <a href="mailto:rasajaga.id@gmail.com" class="ft-link">rasajaga.id@gmail.com</a> | <a href="tel:+6287784354857" class="ft-link">0877-8435-4857</a><br><br>
-      <a href="snk.html" class="ft-link" style="text-decoration:underline;">Syarat & Kebijakan Privasi</a>
+      <a href="snk.html" class="ft-link" style="text-decoration:underline;">Syarat &amp; Kebijakan Privasi</a>
       <div class="ft-socials">
         <a href="https://api.whatsapp.com/send?phone=6287784354857" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -360,6 +364,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </footer>
 
+<!-- Floating WA -->
 <a href="https://api.whatsapp.com/send?phone=6287784354857&text=Halo%20RasaJaga%2C%20saya%20ingin%20bertanya%20seputar%20layanan%20pendampingan%20pasien." class="wa-float" target="_blank" rel="noopener noreferrer">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 </a>
@@ -390,6 +395,5 @@ const rvEls=document.querySelectorAll('.rv');
 const obs=new IntersectionObserver(entries=>{ entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}); },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 rvEls.forEach(el=>obs.observe(el));
 </script>
-
 </body>
 </html>
