@@ -6,7 +6,6 @@
 <title>RasaJaga – Pendamping Pasien di Rumah Sakit Tangerang | Hadir Saat Keluarga Tak Bisa</title>
 <meta name="description" content="Layanan pendamping pasien rawat inap di Tangerang. Shift 3-18 jam, laporan real-time via WA. Transparan, terlatih, dan terjangkau.">
 
-<!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,28 +20,47 @@
   --shadow-md: 0 8px 24px rgba(196,92,56,0.08);
   --shadow-hover: 0 16px 40px rgba(196,92,56,0.12);
 }
+[data-theme="dark"] {
+  --cream: #1a1714; --cream-d: #2a2520; --coral: #d96b4a; --coral-l: #e88a6c; --coral-p: #3d241a;
+  --amber: #e89050; --amber-p: #2d2217; --dark: #fdf5ee; --dark-m: #b5a89a; --white: #221e1a;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.3); --shadow-md: 0 8px 24px rgba(0,0,0,0.5); --shadow-hover: 0 16px 40px rgba(0,0,0,0.7);
+}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+body{background:var(--cream);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none; transition: background 0.3s, color 0.3s;}
 
 /* Cursor */
 #cur{width:10px;height:10px;background:var(--coral);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:multiply;transition:transform .15s,width .2s,height .2s}
 #cur-ring{width:40px;height:40px;border:1.5px solid var(--coral-l);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:all .18s ease;opacity:.4}
 body:has(a:hover) #cur,body:has(button:hover) #cur,body:has(input:hover) #cur,body:has(select:hover) #cur{width:18px;height:18px}
+[data-theme="dark"] #cur {mix-blend-mode: screen;}
 
 /* GLOBAL NAVBAR */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .4s ease; background:rgba(253,245,238,.94);backdrop-filter:blur(14px);border-bottom:.5px solid rgba(196,92,56,.12);box-shadow:var(--shadow-sm)}
+[data-theme="dark"] nav {background:rgba(26, 23, 20, 0.94); border-color:rgba(255,255,255,0.05);}
 .n-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark);text-decoration:none;letter-spacing:-.5px}
 .n-logo em{color:var(--coral);font-style:italic}
 .n-menu-wrapper {display:flex; align-items:center; gap: 2.5rem;}
 .n-links{display:flex;gap:1.25rem;list-style:none}
 .n-links a{font-size:13px;font-weight:500;color:var(--dark-m);text-decoration:none;padding:8px 0;transition:all .25s}
 .n-links a:hover{color:var(--coral)}
-.n-actions {display:flex; align-items:center; gap: 1.5rem;}
-.n-phone {display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--dark); text-decoration:none; transition: color .2s;}
-.n-phone:hover {color:var(--coral);}
+.n-actions {display:flex; align-items:center; gap: 1rem;}
 .n-cta{background:var(--coral);color:#fff;border:none;padding:11px 24px;border-radius:100px;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:none;transition:all .25s;text-decoration:none;box-shadow:var(--shadow-sm)}
 .n-cta:hover{background:var(--dark);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+
+/* Theme Toggle */
+.theme-toggle {background:transparent; border:1px solid rgba(196,92,56,.4); color:var(--coral); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; padding:0; cursor:none; transition:all 0.3s; outline:none;}
+.theme-toggle:hover {background:var(--coral); color:#fff; transform:translateY(-2px); border-color:var(--coral);}
+.theme-toggle svg {width:20px; height:20px;}
+.sun-icon {display:none;}
+[data-theme="dark"] .sun-icon {display:block;}
+[data-theme="dark"] .moon-icon {display:none;}
+
+/* FIX: Mode Gelap Buttons & Native Backgrounds */
+[data-theme="dark"] .n-cta:hover, 
+[data-theme="dark"] .btn-submit:hover {background: #0a0807; color: #fff;}
+[data-theme="dark"] footer {background: #0a0807;}
 
 /* Header S&K */
 .snk-header{text-align:center;padding:11rem 3rem 3rem;}
@@ -52,7 +70,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:
 
 /* Grid Content App-Feel */
 .snk{padding:1rem 3rem 8rem;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:4rem}
-.snk-inner{background:rgba(255, 255, 255, 0.7);border:1px solid rgba(196,92,56,.1);border-radius:var(--radius-lg);padding:4rem 3rem; box-shadow:var(--shadow-md)}
+.snk-inner{background:var(--white);border:1px solid rgba(196,92,56,.1);border-radius:var(--radius-lg);padding:4rem 3rem; box-shadow:var(--shadow-md)}
 .section-hl{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--dark);margin-bottom:2.5rem;display:flex;align-items:center;gap:12px}
 .section-hl::before{content:'';width:24px;height:2px;background:var(--coral);border-radius:2px}
 
@@ -60,7 +78,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:
 
 /* Micro-interaction untuk S&K Items */
 .snk-item{display:flex;gap:1.25rem;align-items:flex-start; padding:1.5rem; border-radius:var(--radius-md); transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); border:1px solid transparent; margin:-1.5rem;}
-.snk-item:hover {background: #fff; border-color:rgba(196,92,56,.1); box-shadow:var(--shadow-md); transform:translateY(-4px);}
+.snk-item:hover {background: var(--cream); border-color:rgba(196,92,56,.1); box-shadow:var(--shadow-md); transform:translateY(-4px);}
+[data-theme="dark"] .snk-item:hover {background: var(--cream-d);}
 
 .snk-icon{color:var(--coral);flex-shrink:0;margin-top:4px;background:var(--coral-p);padding:12px;border-radius:16px; width:56px; height:56px; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
 .snk-item:hover .snk-icon {transform: scale(1.1) rotate(-5deg); background: var(--coral); color: #fff;}
@@ -91,16 +110,24 @@ footer{background:var(--dark);padding:5rem 3rem}
 .ft-link{color:var(--amber);text-decoration:none;transition:color .25s}
 .ft-link:hover{color:#fff}
 .ft-socials{display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;margin-top:1rem}
-.ft-socials a{color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .25s;font-weight:500}
+.ft-socials a{color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .25s;font-weight:500; cursor:none;}
 .ft-socials a:hover{color:#fff;transform:translateY(-2px)}
 
 /* Floating WA Button */
 .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; cursor: none;}
 .wa-float:hover { transform: scale(1.1); }
 
+/* Reveal anim */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
 @media(max-width:768px){
   body{cursor:auto} #cur,#cur-ring{display:none}
-  nav{padding:1rem 1.5rem} .n-links{display:none} .n-phone{display:none} .n-cta{padding:9px 18px;font-size:12px}
+  nav{padding:1rem 1.5rem} nav.scrolled{padding:.85rem 1.5rem}
+  .n-links{display:none} .n-phone{display:none} .n-cta{padding:9px 18px;font-size:12px}
+  .theme-toggle{width:38px; height:38px;}
+  .theme-toggle svg {width:18px; height:18px;}
   .snk-header{padding:8rem 1.5rem 2rem}
   .snk{padding:1rem 1.5rem 5rem;gap:2rem}
   .snk-inner{padding:2.5rem 1.5rem;border-radius:20px}
@@ -120,7 +147,6 @@ footer{background:var(--dark);padding:5rem 3rem}
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- GLOBAL NAVBAR -->
 <nav id="nav">
   <div class="n-menu-wrapper">
     <a href="index.html" class="n-logo">Rasa<em>Jaga</em></a>
@@ -134,10 +160,11 @@ footer{background:var(--dark);padding:5rem 3rem}
     </ul>
   </div>
   <div class="n-actions">
-    <a href="tel:+6287784354857" class="n-phone">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-      0877-8435-4857
-    </a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+    
     <a href="pesan.html" class="n-cta">Mulai Pendampingan</a>
   </div>
 </nav>
@@ -150,9 +177,8 @@ footer{background:var(--dark);padding:5rem 3rem}
 
 <section class="snk">
   
-  <!-- BAGIAN 1: S&K -->
   <div class="snk-inner">
-    <h2 class="section-hl">Syarat &amp; Ketentuan Layanan</h2>
+    <h2 class="section-hl">Syarat & Ketentuan Layanan</h2>
     <div class="snk-grid">
       
       <div class="snk-item">
@@ -183,7 +209,7 @@ footer{background:var(--dark);padding:5rem 3rem}
         <svg class="snk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <div class="snk-text">
           <h4>Tanggung Jawab Darurat (Sakit/Telat)</h4>
-          <p>Jika pendamping yang dijadwalkan tiba-tiba sakit atau berhalangan hadir, RasaJaga bertanggung jawab mencari pengganti dalam waktu <strong>&lt; 2 Jam</strong>. Jika gagal, biaya shift tersebut akan dikembalikan penuh.</p>
+          <p>Jika pendamping yang dijadwalkan tiba-tiba sakit atau berhalangan hadir, RasaJaga bertanggung jawab mencari pengganti dalam waktu <strong>< 2 Jam</strong>. Jika gagal, biaya shift tersebut akan dikembalikan penuh.</p>
         </div>
       </div>
       
@@ -222,7 +248,6 @@ footer{background:var(--dark);padding:5rem 3rem}
     </div>
   </div>
 
-  <!-- BAGIAN 2: PRIVACY POLICY -->
   <div class="snk-inner">
     <h2 class="section-hl">Kebijakan Privasi (Privacy Policy)</h2>
     <div class="snk-grid">
@@ -280,7 +305,6 @@ footer{background:var(--dark);padding:5rem 3rem}
 
 </section>
 
-<!-- CTA -->
 <section class="cta" id="pesan">
   <div class="cta-bg">RJ</div>
   <div class="cta-content rv">
@@ -294,7 +318,6 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
-<!-- UNIVERSAL FOOTER -->
 <footer id="footer">
   <div class="ft-inner">
     <div>
@@ -320,12 +343,23 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </footer>
 
-<!-- Floating WA -->
 <a href="https://api.whatsapp.com/send?phone=6287784354857&text=Halo%20RasaJaga%2C%20saya%20ingin%20bertanya%20seputar%20layanan%20pendampingan%20pasien." class="wa-float" target="_blank" rel="noopener noreferrer">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 </a>
 
 <script>
+// Theme Logic
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+themeToggle.addEventListener('click', () => {
+  if (document.documentElement.getAttribute('data-theme') === 'dark') {
+    document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark');
+  }
+});
+
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{ mx=e.clientX;my=e.clientY; cur.style.transform=`translate(${mx-5}px,${my-5}px)`; });
