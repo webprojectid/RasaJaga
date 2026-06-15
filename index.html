@@ -6,6 +6,7 @@
 <title>RasaJaga – Pendamping Pasien di Rumah Sakit Tangerang | Hadir Saat Keluarga Tak Bisa</title>
 <meta name="description" content="Layanan pendamping pasien rawat inap di Tangerang. Shift 3-18 jam, laporan real-time via WA. Transparan, terlatih, dan terjangkau.">
 
+<!-- Schema Markup LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,7 +27,9 @@
 }
 </script>
 
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+<!-- REVISI 2: Favicon SVG diarahkan dengan benar -->
+<link rel="icon" type="image/svg+xml" href="favico.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
@@ -77,10 +80,11 @@ nav.scrolled{background:rgba(253,245,238,.94);backdrop-filter:blur(14px);padding
 [data-theme="dark"] .sun-icon {display:block;}
 [data-theme="dark"] .moon-icon {display:none;}
 
-/* FIX: Override sections yang native-nya gelap biar tetep gelap di Dark Mode */
+/* REVISI 1: Paksa area background native dark tetap gelap pekat di mode gelap */
 [data-theme="dark"] .services, 
 [data-theme="dark"] .ticker, 
-[data-theme="dark"] footer {background: #0a0807;}
+[data-theme="dark"] .cta,
+[data-theme="dark"] footer {background: #0a0807 !important;}
 [data-theme="dark"] .svc-item {background: #14100e;}
 [data-theme="dark"] .n-cta:hover, 
 [data-theme="dark"] .btn-p:hover, 
@@ -155,9 +159,11 @@ nav.scrolled{background:rgba(253,245,238,.94);backdrop-filter:blur(14px);padding
 .svc-ico svg {transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
 .svc-item:hover .svc-ico svg {transform: scale(1.2) translateY(-2px);}
 .svc-ico{width:46px;height:46px;border-radius:var(--radius-sm);background:var(--coral-p);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
-.svc-n{font-size:10px;color:var(--amber);opacity:.55;margin-bottom:.4rem;font-family:'Playfair Display',serif;letter-spacing:.06em}
-.svc-name{font-size:15px;font-weight:500;color:#fff;margin-bottom:.6rem;line-height:1.3}
-.svc-desc{font-size:12px;color:rgba(255,255,255,.45);line-height:1.65}
+
+/* REVISI 3: Membesarkan ukuran font nomor 01-08 dan deskripsinya */
+.svc-n{font-size:14px;color:var(--amber);opacity:.85;margin-bottom:.5rem;font-family:'Playfair Display',serif;letter-spacing:.08em;font-weight:600;}
+.svc-name{font-size:18px;font-weight:600;color:#fff;margin-bottom:.8rem;line-height:1.3;letter-spacing:-0.2px;}
+.svc-desc{font-size:13.5px;color:rgba(253,245,238,.7);line-height:1.7}
 
 /* Steps */
 .steps{padding:9rem 3rem;max-width:1300px;margin:0 auto}
@@ -337,6 +343,7 @@ footer{background:var(--dark);padding:5rem 3rem}
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
+<!-- GLOBAL NAVBAR -->
 <nav id="nav">
   <div class="n-menu-wrapper">
     <a href="index.html" class="n-logo">Rasa<em>Jaga</em></a>
@@ -350,6 +357,7 @@ footer{background:var(--dark);padding:5rem 3rem}
     </ul>
   </div>
   <div class="n-actions">
+    <!-- Dark Mode Toggle -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
       <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -359,6 +367,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero" id="hero">
   <svg class="hero-blob" viewBox="0 0 500 500"><path d="M420,280Q380,360,300,400Q220,440,160,380Q100,320,80,240Q60,160,130,110Q200,60,290,70Q380,80,420,160Q460,240,420,280Z" fill="#C45C38" opacity=".09"/></svg>
   <svg class="hero-blob2" viewBox="0 0 500 500"><path d="M380,310Q340,380,260,410Q180,440,130,370Q80,300,90,210Q100,120,180,90Q260,60,330,100Q400,140,400,220Q400,300,380,310Z" fill="#E89050" opacity=".12"/></svg>
@@ -369,7 +378,7 @@ footer{background:var(--dark);padding:5rem 3rem}
       <span class="ln"><span>tidak bisa di</span></span>
       <span class="ln"><span>samping <em>mereka.</em></span></span>
     </h1>
-    <p class="h-sub">RasaJaga adalah layanan pendamping pasien di rumah sakit yang memberikan perawatan, bantuan harian, dan update kondisi langsung ke keluarga.</p>
+    <p class="h-sub">RasaJaga adalah layanan pendamping pasien di rumah sakit yang memberikan perawatan, bantuan harian, and update kondisi langsung ke keluarga.</p>
     <div class="h-acts">
       <a href="pesan.html" class="btn-p">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -393,6 +402,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </a>
 </section>
 
+<!-- Ticker -->
 <div class="ticker">
   <div class="ticker-inner">
     <span>Senin - Minggu</span><span class="sep">·</span><span>Kota Tangerang &amp; Sekitarnya</span><span class="sep">·</span><span>Shift 3, 6, 12, &amp; 18 Jam</span><span class="sep">·</span><span>Laporan WA Real-Time</span><span class="sep">·</span><span>Pendamping Terlatih</span><span class="sep">·</span><span>Terjangkau &amp; Terpercaya</span><span class="sep">·</span>
@@ -400,6 +410,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </div>
 
+<!-- About -->
 <section id="tentang" style="background:var(--cream)">
   <div class="about">
     <div class="ab-left rv">
@@ -416,6 +427,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
+<!-- Services -->
 <section class="services" id="layanan">
   <div class="svc-inner">
     <div class="svc-header rv">
@@ -462,6 +474,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
+<!-- How it works -->
 <section class="steps" id="cara-kerja">
   <p class="s-lbl rv">Cara Kerja</p>
   <h2 class="steps-hl rv d1" style="margin-bottom: 3rem;">Mudah, cepat,<br>dan bisa langsung via WhatsApp.</h2>
@@ -472,10 +485,10 @@ footer{background:var(--dark);padding:5rem 3rem}
         <div class="step-num">01</div><h3 class="step-title">Pesan via Form/WA</h3><p class="step-desc">Isi form di web atau hubungi WhatsApp kami. Pilih paket, tentukan jadwal shift (3, 6, 12, atau 18 jam), dan ceritakan kondisi pasien.</p>
       </div>
       <div class="step rv d2">
-        <div class="step-num">02</div><h3 class="step-title">Briefing & Perkenalan</h3><p class="step-desc">Pendamping tiba di RS, kenalan dengan pasien dan keluarga, catat instruksi penting seperti jadwal obat dan kebiasaan pasien.</p>
+        <div class="step-num">02</div><h3 class="step-title">Briefing & Perkenalan</h3><p class="step-desc">Pendamping tiba di RS, kenalan dengan pasien dan keluarga, catat instruksi penting seperti jadwal obat and kebiasaan pasien.</p>
       </div>
       <div class="step rv d3">
-        <div class="step-num">03</div><h3 class="step-title">Jaga & Laporan Rutin</h3><p class="step-desc">Kami jaga pasien sepanjang shift. Keluarga menerima laporan dan foto berkala via WhatsApp. Kamu tetap tenang dari jauh.</p>
+        <div class="step-num">03</div><h3 class="step-title">Jaga & Laporan Rutin</h3><p class="step-desc">Kami jaga pasien sepanjang shift. Keluarga menerima laporan and foto berkala via WhatsApp. Kamu tetap tenang dari jauh.</p>
       </div>
     </div>
     
@@ -485,6 +498,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
+<!-- Pricing -->
 <section class="pricing" id="harga">
   <svg class="price-bg-asset" viewBox="0 0 100 100"><circle cx="50" cy="30" r="20" fill="none" stroke="var(--coral)" stroke-width="3"/><line x1="50" y1="30" x2="50" y2="18" stroke="var(--coral)" stroke-width="3" stroke-linecap="round"/><line x1="50" y1="30" x2="60" y2="35" stroke="var(--amber)" stroke-width="3" stroke-linecap="round"/><rect x="20" y="70" width="40" height="15" rx="7.5" fill="var(--coral)" transform="rotate(-20 40 77)"/><rect x="20" y="70" width="20" height="15" rx="7.5" fill="var(--amber)" transform="rotate(-20 40 77)"/></svg>
   <div class="pricing-inner">
@@ -493,6 +507,7 @@ footer{background:var(--dark);padding:5rem 3rem}
     <p class="rv d2" style="font-size: 15.5px; color: var(--dark-m); margin-bottom: 3.5rem;">Pilih paket sesuai kebutuhan, tanpa biaya tersembunyi.</p>
     
     <div class="p-grid">
+      <!-- PAKET 1 -->
       <div class="p-card rv d1">
         <p class="p-tier">Paket 1</p><h3 class="p-name">Jaga Dasar</h3>
         <div class="p-amts">
@@ -510,6 +525,7 @@ footer{background:var(--dark);padding:5rem 3rem}
         </div>
       </div>
 
+      <!-- PAKET 2 -->
       <div class="p-card feat rv d2">
         <span class="p-badge">✦ Paling diminati</span>
         <p class="p-tier">Paket 2</p><h3 class="p-name">Jaga Standar</h3>
@@ -528,6 +544,7 @@ footer{background:var(--dark);padding:5rem 3rem}
         </div>
       </div>
 
+      <!-- PAKET 3 -->
       <div class="p-card rv d3">
         <p class="p-tier" style="color: var(--coral);">Paket VVIP</p><h3 class="p-name">Jaga Penuh</h3>
         <div class="p-amts">
@@ -544,13 +561,14 @@ footer{background:var(--dark);padding:5rem 3rem}
           <div class="p-feat"><div class="p-ck"><svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#C45C38" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span class="p-ft">Pendamping Senior (Khusus Lansia/Pasien Bingung)</span></div>
           <div class="p-feat"><div class="p-ck"><svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#C45C38" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span class="p-ft">Update via Video Call tiap Shift</span></div>
           <div class="p-feat"><div class="p-ck"><svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#C45C38" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span class="p-ft">Bantu Antar-Jemput (Obat, Laundry, Barang)</span></div>
-          <div class="p-feat"><div class="p-ck"><svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#C45C38" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span class="p-ft">Garansi Ganti Pendamping <2 Jam</span></div>
+          <div class="p-feat"><div class="p-ck"><svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="#C45C38" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><span class="p-ft">Garansi Ganti Pendamping &lt;2 Jam</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Coverage (MAP) -->
 <section id="area" style="background:var(--cream)">
   <div class="coverage">
     <div class="cov-text rv">
@@ -574,6 +592,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
+<!-- FAQ -->
 <section id="faq" class="faq rv">
   <p class="s-lbl" style="justify-content:center; margin-bottom:1rem">Pusat Bantuan</p>
   <h2 class="faq-hl">Pertanyaan yang sering<br>diajukan keluarga.</h2>
@@ -588,7 +607,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
   <div class="faq-item" onclick="this.classList.toggle('active')">
     <div class="faq-q">Bagaimana jika pendamping yang dijadwalkan berhalangan?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
-    <p class="faq-a">Kami akan berusaha ganti pendamping dalam <2 jam atau memberikan full refund untuk shift tersebut.</p>
+    <p class="faq-a">Kami akan berusaha ganti pendamping dalam &lt;2 jam atau memberikan full refund untuk shift tersebut.</p>
   </div>
   <div class="faq-item" onclick="this.classList.toggle('active')">
     <div class="faq-q">Apakah RasaJaga melayani pasien di rumah (Homecare)?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
@@ -600,11 +619,13 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
+<!-- Link S&K Baru -->
 <div class="snk-link-area rv">
   <p style="font-size:13px; color:var(--dark-m); margin-bottom:1.5rem;">Ingin mengetahui batasan layanan dan tanggung jawab kami lebih detail?</p>
   <a href="snk.html" class="snk-btn">📄 Baca Syarat & Ketentuan Layanan</a>
 </div>
 
+<!-- CTA -->
 <section class="cta" id="pesan">
   <div class="cta-bg">RJ</div>
   <div class="cta-flex rv">
@@ -612,7 +633,7 @@ footer{background:var(--dark);padding:5rem 3rem}
       <h2 class="cta-hl" style="font-size: clamp(36px,5vw,64px); letter-spacing: -2px;">Siap memastikan mereka<br><em style="font-style:italic">tidak sendirian?</em></h2>
       <p class="cta-sub" style="margin-left: 0;">Satu klik saja, bantu kami memahami kebutuhan Anda lewat form singkat yang akan diteruskan ke WhatsApp.</p>
       <a href="pesan.html" class="btn-wa">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
         Mulai Pendampingan
       </a>
       <p class="cta-note" style="text-align: left;">Respon cepat · Senin - Minggu · Tangerang</p>
@@ -622,6 +643,7 @@ footer{background:var(--dark);padding:5rem 3rem}
   </div>
 </section>
 
+<!-- UNIVERSAL FOOTER -->
 <footer id="footer">
   <div class="ft-inner">
     <div>
@@ -636,7 +658,7 @@ footer{background:var(--dark);padding:5rem 3rem}
       <div class="ft-socials">
         <a href="https://api.whatsapp.com/send?phone=6287784354857" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-          WhatsApp CS
+        WhatsApp CS
         </a>
         <a href="https://www.instagram.com/rasajaga.id" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -646,10 +668,6 @@ footer{background:var(--dark);padding:5rem 3rem}
     </div>
   </div>
 </footer>
-
-<a href="https://api.whatsapp.com/send?phone=6287784354857&text=Halo%20RasaJaga%2C%20saya%20ingin%20bertanya%20seputar%20layanan%20pendampingan%20pasien." class="wa-float" target="_blank" rel="noopener noreferrer">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-</a>
 
 <script>
 // Theme Logic
